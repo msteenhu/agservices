@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agmetrics
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agmetrics
+  template:
+    metadata:
+      labels:
+        app: agmetrics
+    spec:
+      containers:
+        - name: agmetrics
+          image: msteenhu/agmetrics:0.0.2
+          volumeMounts:
+            - name: ub
+              mountPath: /ub
+      volumes:
+        - name: ub
+          hostPath:
+            path: /ub
+            type: Directory
