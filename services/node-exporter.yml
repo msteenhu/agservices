@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: node-exporter
 spec:
+  externalTrafficPolicy: Local
   type: NodePort
   selector:
     app: node-exporter
