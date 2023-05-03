@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: agmetrics-service
 spec:
-  externalTrafficPolicy: Local
   type: NodePort
   selector:
     app: agmetrics
